@@ -1,0 +1,19 @@
+.grid-toolbar{
+    grid-area: toolbar;
+  }
+  
+  .grid-menu{
+    grid-area: menu;
+  }
+
+  .grid-content{
+    grid-area: content;
+  }
+
+  
+  .grid-container{
+    display: grid;
+    grid-template-areas: 
+    'toolbar toolbar toolbar toolbar toolbar toolbar'
+    'menu    content content content content content';}
+  

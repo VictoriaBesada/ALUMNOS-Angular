@@ -1,0 +1,61 @@
+<!-- <div>
+    <div [ngStyle]="{'background-color':'#E7E7E7', 'padding':'1rem'}">
+    <h2>Lista de alumnos*</h2>
+    <ol>
+        <li [style.color]="alumno.asistencias <= 9 ? 'red' : 'green'" *ngFor="let alumno of alumnos">{{ alumno.nombre }}
+            {{alumno.apellido}} - Asistencias: {{ alumno.asistencias }}</li>
+    </ol>
+    </div>
+    <div [ngStyle]="{'background-color':'#F7F5AC', 'margin-top':'1rem', 'padding':'1rem'}">
+    <h3 [ngStyle]="{'color':'green'}">*Los alumnos con 10 o mas asistencias estan remarcados con color VERDE</h3>
+    <h3 [ngStyle]="{'color':'red'}">*Los alumnos con 9 o menos asistencias estan remarcados con color ROJO</h3>
+    </div>
+</div> -->
+
+<div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+        <!-- Position Column -->
+        <ng-container matColumnDef="legajo">
+            <th mat-header-cell *matHeaderCellDef>Legajo</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.legajo}}</td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.nombre}}</td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="apellido">
+            <th mat-header-cell *matHeaderCellDef>Apellido</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.apellido}}</td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="asistencias">
+            <th mat-header-cell *matHeaderCellDef>Aistencias</th>
+            <td mat-cell *matCellDef="let alumno">{{alumno.asistencias}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row (click)="clickedRows.add(row)" [class.demo-row-is-clicked]="clickedRows.has(row)"
+            *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div>
+        <h3>
+            Alumnos seleccionados:
+        </h3>
+    </div>
+
+    <div *ngIf="!clickedRows.size">
+        Los alumnos seleccionados apareceran aca
+    </div>
+
+    <ul>
+        <li *ngFor="let clickedRow of clickedRows">
+            Clicked on {{clickedRow.nombre}}
+        </li>
+    </ul>
+</div>

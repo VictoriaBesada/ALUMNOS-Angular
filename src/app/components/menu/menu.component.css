@@ -1,0 +1,12 @@
+.navbar{
+    background-color: white;
+    height: 400px;
+    
+}
+
+.navbar a{
+    text-decoration: none;
+    color: #6f9386;
+    font-family: 'Work Sans', sans-serif;
+    font-size: larger;
+}
