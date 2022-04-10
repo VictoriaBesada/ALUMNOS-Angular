@@ -1,0 +1,5 @@
+.card{
+    margin: 1em;
+    display: inline-flex;
+    text-align: center;
+}

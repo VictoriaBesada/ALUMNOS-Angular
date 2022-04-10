@@ -7,9 +7,9 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormComponent } from './components/form/form.component';
-import { TableComponent } from './components/table/table.component';
-import { MaterialModule } from './app.material.module';
+import { AppMaterialModule } from './modules/app.material.module';
+import { CursosComponent } from './components/cursos/cursos.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +18,13 @@ import { MaterialModule } from './app.material.module';
     MenuComponent,
     ABMDeAlumnosComponent,
     ListaAlumnosComponent,
-    FormComponent,
-    TableComponent
+    CursosComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule
+    AppMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

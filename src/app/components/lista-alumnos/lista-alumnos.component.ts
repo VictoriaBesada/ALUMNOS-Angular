@@ -55,18 +55,6 @@ const dataAlumnos: ListaAlumnos[] = [
     nombre: 'Mateo',
     apellido: 'Gonzalez',
     asistencias: 10
-    },
-    {
-    legajo: 1009,
-    nombre: 'Milagros',
-    apellido: 'Castro',
-    asistencias: 9
-    },
-    {
-    legajo: 1010,
-    nombre: 'Rocio',
-    apellido: 'Rodriguez',
-    asistencias: 6
     }
 ];
 

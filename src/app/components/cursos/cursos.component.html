@@ -1,0 +1,11 @@
+<div fxLayout="row">
+    <mat-card fxFlex.gt-lg="20%" fxFlex.lt-md="100%" *ngFor="let curso of cursos" class="card">
+        <mat-card-title>{{ curso.nombre }}</mat-card-title>
+        <mat-card-subtitle>Camada {{ curso.camada }}</mat-card-subtitle>
+        <mat-card-content>{{ curso.descripcion }}</mat-card-content>
+        <mat-card-actions>
+            <button fxFlex.lt-md="100%" class="btn btn-primary" (click)="modificarCurso(curso)">Modificar</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
