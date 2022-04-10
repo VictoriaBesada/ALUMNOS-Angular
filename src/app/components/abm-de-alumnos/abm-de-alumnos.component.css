@@ -15,6 +15,7 @@ form{
 
 .alumnos{
     display: inline-flex;
+    justify-content: space-evenly;
     margin: 2rem;
 }
 

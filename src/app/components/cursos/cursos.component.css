@@ -1,5 +1,10 @@
 .card{
-    margin: 1em;
-    display: inline-flex;
+    margin: 2em;
     text-align: center;
+    background-color: darkgray;
+}
+
+.cursos{
+    display: inline-flex;
+    justify-content: space-evenly;
 }
