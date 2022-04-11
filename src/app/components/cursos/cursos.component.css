@@ -8,3 +8,8 @@
     display: inline-flex;
     justify-content: space-evenly;
 }
+
+.heading{
+    text-align: center;
+    font-weight: 500;
+}

@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './modules/app.material.module';
 import { CursosComponent } from './components/cursos/cursos.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { TitleSizeDirective } from './directives/titleSize.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     ABMDeAlumnosComponent,
     ListaAlumnosComponent,
-    CursosComponent
+    CursosComponent,
+    TitleSizeDirective,
   ],
   imports: [
     BrowserModule,
