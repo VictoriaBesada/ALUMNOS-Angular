@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ToolbarComponent } from './toolbar.component';
+import { CursosObservablesComponent } from './cursos-observables.component';
 
 
-describe('ToolbarComponent', () => {
+describe('CursosObservablesComponent', () => {
 
-  let component: ToolbarComponent;
-  let fixture: ComponentFixture<ToolbarComponent>;
+  let component: CursosObservablesComponent;
+  let fixture: ComponentFixture<CursosObservablesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToolbarComponent ]
+      declarations: [ CursosObservablesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToolbarComponent);
+    fixture = TestBed.createComponent(CursosObservablesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

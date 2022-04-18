@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { ABMDeAlumnosComponent } from './components/abm-de-alumnos/abm-de-alumnos.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
@@ -11,8 +10,12 @@ import { AppMaterialModule } from './modules/app.material.module';
 import { CursosComponent } from './components/cursos/cursos.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TitleSizeDirective } from './directives/titleSize.directive';
+import { CursosObservablesComponent } from './components/cursos-observables/cursos-observables.component';
+import { CursosDialogComponent } from './components/cursos-dialog/cursos-dialog.component';
+
 
 @NgModule({
+
   declarations: [
     AppComponent,
     ToolbarComponent,
@@ -21,6 +24,8 @@ import { TitleSizeDirective } from './directives/titleSize.directive';
     ListaAlumnosComponent,
     CursosComponent,
     TitleSizeDirective,
+    CursosObservablesComponent,
+    CursosDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,5 +35,7 @@ import { TitleSizeDirective } from './directives/titleSize.directive';
   ],
   providers: [],
   bootstrap: [AppComponent]
+
 })
+
 export class AppModule { }

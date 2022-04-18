@@ -10,10 +10,10 @@
     grid-area: content;
   }
 
-  
   .grid-container{
     display: grid;
     grid-template-areas: 
     'toolbar toolbar toolbar toolbar toolbar toolbar'
-    'menu    content content content content content';}
+    'menu    content content content content content';
+  }
   

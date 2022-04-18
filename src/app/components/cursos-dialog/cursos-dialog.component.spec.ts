@@ -1,21 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ToolbarComponent } from './toolbar.component';
+import { CursosDialogComponent } from './cursos-dialog.component';
 
 
-describe('ToolbarComponent', () => {
+describe('CursosDialogComponent', () => {
 
-  let component: ToolbarComponent;
-  let fixture: ComponentFixture<ToolbarComponent>;
+  let component: CursosDialogComponent;
+  let fixture: ComponentFixture<CursosDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToolbarComponent ]
+      declarations: [ CursosDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToolbarComponent);
+    fixture = TestBed.createComponent(CursosDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

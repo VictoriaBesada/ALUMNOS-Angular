@@ -1,0 +1,11 @@
+.cursos{
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+    text-align: center;
+}
+
+.heading{
+    text-align: center;
+    font-weight: 500;
+}

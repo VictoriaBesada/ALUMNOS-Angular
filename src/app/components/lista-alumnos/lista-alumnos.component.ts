@@ -63,6 +63,7 @@ const dataAlumnos: ListaAlumnos[] = [
   templateUrl: './lista-alumnos.component.html',
   styleUrls: ['./lista-alumnos.component.css']
 })
+
 export class ListaAlumnosComponent {
   displayedColumns: string[] = ['legajo','nombre', 'apellido', 'asistencias'];
   dataSource = dataAlumnos;

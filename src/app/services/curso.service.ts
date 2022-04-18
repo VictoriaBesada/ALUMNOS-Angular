@@ -1,46 +1,68 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { filter, map, from, Observable, Subject } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 
-
 export class CursoService {
 
-  private cursoObservable: Observable<any>;
-  private cursoSubject: Subject<any>;
-  private cursos: Array<{
-    id: number,
-    nombre: string,
-    turno: string,
-    descripcion: string
-  }> = [
-    {id: 1, nombre: "Angular", turno: "Tarde", descripcion: "Curso de Angular para desarrollo web"},
-    {id: 2, nombre: "ReactJS", turno: "Manana", descripcion: "Curso de ReactJS para desarrollo web"},
-    {id: 3, nombre: "VueJS", turno: "Noche", descripcion: "Curso de VueJS para desarrollo web"},
-    {id: 4, nombre: "TypeScript", turno: "Noche", descripcion: "Curso de TypeScript para desarrollo web"},
-    {id: 5, nombre: "RxJS", turno: "Manana", descripcion: "Curso de RxJS para desarrollo web"},
-    {id: 6, nombre: "JavaScript", turno: "Tarde", descripcion: "Curso de JavaScript para desarrollo web"},
+  cursos: Array<any>  = [
+    {id: 1, nombre: "Angular", turno: 'noche'},
+    {id: 2, nombre: "ReactJS", turno: 'tarde'},
+    {id: 3, nombre: "VueJS", turno: 'tarde'},
+    {id: 4, nombre: "TypeScript", turno: 'noche'},
+    {id: 5, nombre: "RxJS", turno: 'tarde'},
+    {id: 6, nombre: "JavaScript", turno: 'noche'},
   ];
 
+  cursosPromise!: Promise<any>;
+  cursos$: Observable<any>;
+
   constructor() { 
-    this.cursoObservable = new Observable((suscripcion) => {
+
+  this.cursos$ = new Observable((suscripcion) => {
+    if(this.cursos.length > 0){
       suscripcion.next(this.cursos);
-    });
-    this.cursoSubject = new Subject();
-  }
-
-  obtenerObsevable(){
-    return this.cursoObservable;
-  }
-
-  modificarCurso(curso: any){
-    for(let i=0; i<this.cursos.length; i++){
-      if(this.cursos[i].id == curso.id){
-        this.cursos[i].descripcion = curso.descripcion + " Modificado"
-      }
+      suscripcion.complete();
+    }else{
+      suscripcion.error("Obvservable no tiene datos para enviar");
     }
-    this.cursoSubject.next(this.cursos);
+  });
+
+  this.cursosPromise = new Promise((resolve, reject) => {
+    if(this.cursos.length > 0){
+      resolve(this.cursos);
+    }else{
+      reject(this.cursos);
+    }
+  });
+
+}
+
+obtenerCursosPromise(){
+  return this.cursosPromise;
+}
+
+obtenerCursosObservable(){
+  return this.cursos$;
+}
+
+eliminarCurso(id: number){
+  for(let i=0; i<this.cursos.length; i++){
+    if(this.cursos[i].id == id){
+      this.cursos.splice(this.cursos[i], 1);
+    }
   }
+}
+
+modificarCurso(curso: any){
+  for(let i=0; i<this.cursos.length; i++){
+    if(this.cursos[i].id == curso.id){
+      this.cursos[i] = curso;
+    }
+  }
+}
+
 }

@@ -7,9 +7,11 @@ import { AlumnoService } from 'src/app/services/alumnos.services';
   templateUrl: './abm-de-alumnos.component.html',
   styleUrls: ['./abm-de-alumnos.component.css']
 })
+
 export class ABMDeAlumnosComponent implements OnInit {
 
   alumnos: any;
+  
   formulario: FormGroup = new FormGroup({
     legajo: new FormControl('', [Validators.required]),
     nombre: new FormControl('', [Validators.required]),

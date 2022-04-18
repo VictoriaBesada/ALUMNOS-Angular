@@ -2,9 +2,11 @@ import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { Alumno } from '../models/alumno';
 
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class AlumnoService {
   private alumnos: Alumno[] = [
     {
@@ -56,6 +58,7 @@ export class AlumnoService {
       asistencias: 10
       }
   ];
+
   private alumnoObservable: Observable<Alumno[]>;
   private alumnoSubject: Subject<Alumno[]>;
   
@@ -99,4 +102,5 @@ export class AlumnoService {
     this.alumnos.push(alumno);
     this.alumnoSubject.next(this.alumnos);
   }
+  
 }
