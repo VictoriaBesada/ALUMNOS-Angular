@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Alumno } from 'src/app/models/alumno';
 import { AlumnoService } from 'src/app/services/alumnos.services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-abm-de-alumnos',
@@ -10,7 +12,9 @@ import { AlumnoService } from 'src/app/services/alumnos.services';
 
 export class ABMDeAlumnosComponent implements OnInit {
 
-  alumnos: any;
+  alumnos: any;    
+  personasFiltradas$!: Observable<Alumno[]>
+
   
   formulario: FormGroup = new FormGroup({
     legajo: new FormControl('', [Validators.required]),
@@ -22,6 +26,7 @@ export class ABMDeAlumnosComponent implements OnInit {
   constructor(private alumnoService: AlumnoService) { }
 
   ngOnInit(): void {
+    this.personasFiltradas$ = this.alumnoService.obtenerDatosFiltrados();
     this.alumnoService.obtenerAlumnosObservable().subscribe((alumnos)=>{
       this.alumnos = alumnos;
     })

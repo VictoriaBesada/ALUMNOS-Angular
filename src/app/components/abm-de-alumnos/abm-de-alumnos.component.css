@@ -23,3 +23,9 @@ form{
     text-align: center;
     font-weight: 500;
 }
+
+.aviso{
+    margin: 2rem;
+    color: red;
+    border: 1px solid ;
+}

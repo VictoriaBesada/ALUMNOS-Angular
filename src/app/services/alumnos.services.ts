@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject, map, of } from 'rxjs';
 import { Alumno } from '../models/alumno';
 
 
@@ -61,8 +61,10 @@ export class AlumnoService {
 
   private alumnoObservable: Observable<Alumno[]>;
   private alumnoSubject: Subject<Alumno[]>;
+  datos$: Observable<Alumno[]>;
   
   constructor(){
+    this.datos$ = of(this.alumnos);
     this.alumnoSubject = new Subject();
     this.alumnoObservable = new Observable((suscripcion) => {
       suscripcion.next(this.alumnos);
@@ -101,6 +103,12 @@ export class AlumnoService {
   agregarAlumno(alumno: Alumno){
     this.alumnos.push(alumno);
     this.alumnoSubject.next(this.alumnos);
+  }
+
+  obtenerDatosFiltrados(): Observable<Alumno[]> {
+    return this.datos$.pipe(
+      map(alumnos => alumnos.filter(alumno => alumno.asistencias < 10))
+    );
   }
   
 }
