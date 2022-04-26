@@ -10,7 +10,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 export class CursoService {
 
-  serviceURL = "https://perfildigital.adea.com.ar/service/test/service.ashx";
+  serviceURL = "https://626765be78638336421ee4dd.mockapi.io/api/v1/cursos/cursos";
 
   cursos: Array<any>  = [
     {id: 1, nombre: "Angular", turno: 'noche', camada: '342342', descripcion: 'ksejfkefkj'},
@@ -46,7 +46,6 @@ export class CursoService {
 
 }
 obtenerDatosCursosObservable(): Observable<any> {
-  //call asmx to get courses
 
   let params = new HttpParams();
   params = params.append('method', 'getCourses');

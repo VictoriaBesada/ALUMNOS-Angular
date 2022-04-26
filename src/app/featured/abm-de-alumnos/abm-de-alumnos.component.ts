@@ -14,6 +14,8 @@ export class ABMDeAlumnosComponent implements OnInit, OnDestroy {
 
   alumnos: any;    
   personasFiltradas$!: Observable<Alumno[]>
+  alumnosSuscripcion!: any;
+
 
   
   formulario: FormGroup = new FormGroup({
@@ -41,7 +43,9 @@ export class ABMDeAlumnosComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.alumnos.unsubscribe();
+    if (this.alumnosSuscripcion) {
+      this.alumnosSuscripcion.unsubscribe();
+    }
   }
 
 }

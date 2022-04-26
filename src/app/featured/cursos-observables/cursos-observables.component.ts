@@ -4,6 +4,7 @@ import { MatTable } from '@angular/material/table';
 import { CursoService } from 'src/app/shared/services/curso.service';
 import { Subscriber } from 'rxjs';
 import { Observable, Subscription } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CursosDialogComponent } from '../cursos-dialog/cursos-dialog.component';
 
 
@@ -26,21 +27,22 @@ export class CursosObservablesComponent implements OnInit {
 
 
 
-  constructor (public dialog: MatDialog, private cursoService: CursoService) { }
+  constructor (public dialog: MatDialog, private cursoService: CursoService, private activatedRoute: ActivatedRoute
+    ) { }
 
   ngOnInit(): void {
-    this.cursoService.obtenerCursosObservable().subscribe({
-      next: (cursos)=>{
-        this.cursos = cursos;
-      },
-      error: (error) => {
-        console.error("Ocurrio un error", error);
-      }
-    });
+    this.activatedRoute.url.forEach((urlSegment) => {
+      console.log(urlSegment);
+      urlSegment.forEach(datoSegmento => {
+        if (datoSegmento.path == 'inscriptions') {
+          this.administraInscripcion = true;
+        }
+      })
+    })
+    this.obtenerCursos();
   }
   obtenerCursos() {
     this.Cursos$ = this.cursoService.obtenerDatosCursosObservable();
-    // this.filterCourses()
     this.CursosSuscripcion = this.Cursos$
 
       .subscribe((datos) => {
