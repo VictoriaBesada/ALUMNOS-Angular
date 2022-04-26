@@ -1,67 +1,82 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject, map, of } from 'rxjs';
-import { Alumno } from '../../models/alumno';
-
+import { Estudiante } from 'src/app/core/models/alumno';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AlumnoService {
-  private alumnos: Alumno[] = [
+  private alumnos: Estudiante[] = [
     {
       legajo: 1001,
       nombre: 'Claire',
       apellido: 'Albarico',
-      asistencias: 13
+      asistencias: 13,
+      id: 1,
+      correo: 'clairealbarico@gmail.com'
       },
       {
       legajo: 1002,
       nombre: 'Cristian',
       apellido: 'Besada',
-      asistencias: 8
+      asistencias: 8,
+      id: 2,
+      correo: 'cristianbesada@gmail.com'
       },
       {
       legajo: 1003,
       nombre: 'Paloma',
       apellido: 'Gras',
-      asistencias: 11
+      asistencias: 11,
+      id: 3,
+      correo: 'palomagras@gmail.com'
       },
       {
         legajo: 1004,
       nombre: 'Claudia',
       apellido: 'Cappelletti',
-      asistencias: 12
+      asistencias: 12,
+      id: 3,
+      correo: 'claucap@gmail.com'
       },
       {
         legajo: 1005,
       nombre: 'Lucia',
       apellido: 'Marcos',
-      asistencias: 13
+      asistencias: 13,
+      id: 4,
+      correo: 'lumarcos@gmail.com'
       },
       {
         legajo: 1006,
       nombre: 'Micaela',
       apellido: 'Husak',
-      asistencias: 7
+      asistencias: 7,
+      id: 5,
+      correo: 'micahusak@gmail.com'
       },
       {
         legajo: 1007,
       nombre: 'Nazarena',
       apellido: 'Gomez',
-      asistencias: 8
+      asistencias: 8,
+      id: 6,
+      correo: 'nazagomez@gmail.com'
       },
       {
       legajo: 1008,
       nombre: 'Mateo',
       apellido: 'Gonzalez',
-      asistencias: 10
+      asistencias: 10,
+      id: 7,
+      correo: 'mateogonz@gmail.com'
       }
   ];
 
-  private alumnoObservable: Observable<Alumno[]>;
-  private alumnoSubject: Subject<Alumno[]>;
-  datos$: Observable<Alumno[]>;
+  private alumnoObservable: Observable<Estudiante[]>;
+  private alumnoSubject: Subject<Estudiante[]>;
+  datos$: Observable<Estudiante[]>;
   
   constructor(){
     this.datos$ = of(this.alumnos);
@@ -90,7 +105,7 @@ export class AlumnoService {
   }
 
   eliminarAlumno(legajo: number){
-    let filtrado: Alumno[] = []
+    let filtrado: Estudiante[] = []
     filtrado = this.alumnos.filter((valor) => {
       if(valor.legajo != legajo){
         return valor;
@@ -100,12 +115,12 @@ export class AlumnoService {
     });
   }
 
-  agregarAlumno(alumno: Alumno){
+  agregarAlumno(alumno: Estudiante){
     this.alumnos.push(alumno);
     this.alumnoSubject.next(this.alumnos);
   }
 
-  obtenerDatosFiltrados(): Observable<Alumno[]> {
+  obtenerDatosFiltrados(): Observable<Estudiante[]> {
     return this.datos$.pipe(
       map(alumnos => alumnos.filter(alumno => alumno.asistencias < 10))
     );

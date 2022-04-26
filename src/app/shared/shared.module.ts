@@ -1,18 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NombreCurso } from './pipes/nombre-cursos.pipe';
+import { AppMaterialModule } from './app.material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
-  declarations: [
-    NombreCurso,
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    AppMaterialModule,
+    ReactiveFormsModule
   ],
   exports: [
-    NombreCurso,
+    AppMaterialModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

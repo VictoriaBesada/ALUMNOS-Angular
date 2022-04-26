@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Alumno } from 'src/app/models/alumno';
+import { Estudiante } from 'src/app/core/models/alumno';
 import { AlumnoService } from 'src/app/shared/services/alumnos.services';
 import { Observable } from 'rxjs';
 
@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class ABMDeAlumnosComponent implements OnInit, OnDestroy {
 
   alumnos: any;    
-  personasFiltradas$!: Observable<Alumno[]>
+  personasFiltradas$!: Observable<Estudiante[]>
   alumnosSuscripcion!: any;
 
 

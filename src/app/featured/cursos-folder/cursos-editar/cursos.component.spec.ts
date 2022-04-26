@@ -1,21 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CursosDialogComponent } from './cursos-dialog.component';
+import { EditarCursoDialogComponent } from '../cursos-editar/cursos.component'
 
-
-describe('CursosDialogComponent', () => {
-
-  let component: CursosDialogComponent;
-  let fixture: ComponentFixture<CursosDialogComponent>;
+describe('EditarCursoDialogComponent', () => {
+  let component: EditarCursoDialogComponent;
+  let fixture: ComponentFixture<EditarCursoDialogComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CursosDialogComponent ]
+      declarations: [ EditarCursoDialogComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CursosDialogComponent);
+    fixture = TestBed.createComponent(EditarCursoDialogComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -23,5 +21,4 @@ describe('CursosDialogComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  
 });

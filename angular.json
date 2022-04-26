@@ -104,6 +104,16 @@
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "lista_alumnos:build:production",
+            "firebaseProject": "alumnos-angular",
+            "firebaseHostingSite": "alumnos-angular"
+          }
         }
       }
     }
