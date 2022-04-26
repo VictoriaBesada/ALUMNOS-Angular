@@ -9,12 +9,12 @@
             Del {{ curso.fechaInicio | date: 'dd/MM/YYYY' }} al {{ curso.fechaFin | date: 'dd/MM/YYYY' }}
         </mat-card-subtitle>
         <mat-card-subtitle>
-            Camada {{curso.camada}} - Turno {{curso.turno}}
+            Camada {{curso.camada}} - Dias de cursada: {{curso.turno}}
         </mat-card-subtitle>
         <mat-card-content>
             <p>Descripcion: {{curso.descripcion}}</p>
-            <p>Profesor: {{ curso.profesor.nombre }}</p>
-            <p>{{ curso.estudiantes.length }} Estudiantes</p>
+            <!-- <p>Profesor: {{ curso.profesor.nombre }}</p> -->
+            <!-- <p>{{ curso.estudiantes.length }} Estudiantes</p> -->
         </mat-card-content>
 
         <mat-card-actions align="end">
