@@ -1,0 +1,36 @@
+.alinearInputs{
+    display: inline-flex;
+    justify-content: space-around;
+}
+
+form{
+    margin: 2rem;
+    padding: 0%;
+}
+
+.tabla{
+    text-align: center;
+    width: 70%;
+}
+
+.alumnos{
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin: 2rem;
+}
+
+.heading{
+    text-align: center;
+    font-weight: 500;
+}
+
+.aviso{
+    margin: 2rem;
+    color: red;
+    border: 1px solid ;
+}
+
+.componenteInscripciones{
+    width: 100%;
+    text-align: center;
+}

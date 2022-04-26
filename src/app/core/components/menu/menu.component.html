@@ -1,0 +1,26 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" mode="side" opened="true">
+    <div class="navbar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" [routerLink]="'alumnos'">Alumnos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'cursos'">Cursos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'inscripciones'">Inscripciones</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="'ayuda'">Ayuda</a>
+            </li>
+        </ul>
+    </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="contenido mat-elevation-z8">
+            <router-outlet>
+            </router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

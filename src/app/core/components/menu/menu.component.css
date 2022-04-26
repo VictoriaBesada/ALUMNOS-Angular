@@ -1,0 +1,26 @@
+mat-sidenav {
+    margin: 12px;
+    border-right: none;
+    background-color: skyblue;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Work Sans', sans-serif;
+}
+
+
+.contenido {
+    min-height: calc(100vh - 130px);
+    max-width: 100%;
+    margin: 12px;
+    margin-left: 32px;
+    padding: 16px;
+    background-color: silver;
+}
+
+.mat-drawer-container{
+    background-color: white;
+}
+
+.nav-link{
+    color: white;
+}

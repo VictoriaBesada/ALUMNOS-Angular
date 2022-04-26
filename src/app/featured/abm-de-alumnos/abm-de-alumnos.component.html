@@ -1,0 +1,34 @@
+<div class="componenteInscripciones">
+<h1 class="heading" titleSize>Inscripciones</h1>
+
+<h3 class="aviso heading">*Los alumnos con insuficientes asistencias son:{{ personasFiltradas$ | async | json }}</h3>
+<div *ngFor="let alumno of alumnos" class="alumnos">
+  <table class="table tabla">
+    <h4>Legajo ({{ alumno.legajo }}) </h4>
+    <h4>Nombre {{ alumno.nombre }} </h4>
+    <h4>Apellido {{ alumno.apellido }}</h4>
+    <h4>Asistencias {{ alumno.asistencias }} </h4>
+    <button (click)="eliminarAlumno(alumno.legajo)" class="btn btn-danger">Eliminar</button>
+  </table>
+</div>
+
+<hr>
+<form [formGroup]="formulario" (ngSubmit)="agregarAlumno()" class="row g-3">
+  <p class="heading" titleSize>Registrar nuevos alumnos</p>  
+  <div class="alinearInputs">
+    <div class="col-auto">
+      <input type="text" placeholder="Legajo" class="form-control" formControlName="legajo"> <br>
+    </div>
+    <div class="col-auto">
+      <input type="text" placeholder="Nombre" class="form-control" formControlName="nombre"> <br>
+    </div>
+    <div class="col-auto">
+      <input type="text" placeholder="Apellido" class="form-control" formControlName="apellido"> <br>
+    </div>
+    <div class="col-auto">
+      <input type="text" placeholder="Asistencias" class="form-control" formControlName="asistencias"> <br>
+    </div>
+  </div>
+  <button type="submit" [disabled]="formulario.invalid" class="btn btn-success">Agregar</button>
+</form>
+</div>
