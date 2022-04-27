@@ -7,13 +7,13 @@ import { Curso } from 'src/app/core/models/courses';
   providedIn: 'root'
 })
 export class CursosService {
-  private readonly API_URL = 'https://626765be78638336421ee4dd.mockapi.io/api/v1/cursos/cursos';
+  private readonly API_URL = 'https://626765be78638336421ee4dd.mockapi.io';
   constructor(
     private http: HttpClient
   ) { }
 
   obtenerCursos(): Observable<Curso[]>{
-    return this.http.get<Curso[]>(`${this.API_URL}`, {
+    return this.http.get<Curso[]>(`${this.API_URL}/cursos`, {
       headers: new HttpHeaders({
         'content-type': 'application/json'
       })
@@ -25,7 +25,7 @@ export class CursosService {
   }
 
   modificarCurso(curso: Curso){
-    return this.http.put(`${this.API_URL}${curso.id}`, curso);
+    return this.http.put(`${this.API_URL}/cursos/${curso.id}`, curso);
   }
 
   eliminarCurso(idCurso: string){
