@@ -30,7 +30,6 @@ export class ListaCursosComponent implements OnInit {
   }
 
   eliminarCurso(id: string){
-
   }
 
 }

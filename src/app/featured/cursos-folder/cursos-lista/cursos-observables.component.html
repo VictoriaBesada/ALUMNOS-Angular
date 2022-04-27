@@ -13,11 +13,12 @@
         </mat-card-subtitle>
         <mat-card-content>
             <p>Descripcion: {{curso.descripcion}}</p>
-            <!-- <p>Profesor: {{ curso.profesor.nombre }}</p> -->
-            <!-- <p>{{ curso.estudiantes.length }} Estudiantes</p> -->
+            <p>Profesor: {{ curso.profesor.nombre }}</p>
+            <p>{{ curso.estudiantes.length }} Estudiantes</p>
         </mat-card-content>
 
         <mat-card-actions align="end">
+            <button mat-button color="accent" routerLink="/cursos/{{curso.id}}">Ver detalle</button>
             <button mat-button color="primary" (click)="abrirDialogModificar(curso)">Modificar</button>
             <button mat-button color="warn" (click)="eliminarCurso(curso.id)">Eliminar</button>
         </mat-card-actions>

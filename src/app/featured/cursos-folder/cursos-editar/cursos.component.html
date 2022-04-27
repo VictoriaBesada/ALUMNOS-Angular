@@ -13,7 +13,7 @@
             <input type="date" matInput formControlName="fechaFin">
         </mat-form-field><br>
         <mat-form-field appearance="fill">
-            <mat-label>Select</mat-label>
+            <mat-label>Seleccionar profesor</mat-label>
             <mat-select formControlName="profesor">
                 <mat-option *ngFor="let profesor of profesores" [value]="profesor">{{ profesor.nombre }} {{ profesor.apellido }}</mat-option>
             </mat-select>
