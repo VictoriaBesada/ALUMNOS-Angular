@@ -1,0 +1,29 @@
+form {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    background-color: skyblue;
+}
+
+.card {
+    min-width: 400px;
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+input{
+    padding: 8px;
+    margin: 20px;
+    background-color: #eee;
+    border: 0;
+}
+
+button {
+    margin-top: 1em;
+    padding: 10px;
+} 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Curso } from 'src/app/core/models/courses';
-import { CursosService } from '../course.service';
+import { CursosService } from '../../../shared/services/course.service';
 import { EditarCursoDialogComponent } from '../cursos-editar/cursos.component';
 @Component({
   selector: 'app-lista-cursos',
