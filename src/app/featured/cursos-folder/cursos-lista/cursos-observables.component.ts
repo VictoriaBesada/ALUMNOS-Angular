@@ -30,6 +30,7 @@ export class ListaCursosComponent implements OnInit {
   }
 
   eliminarCurso(id: string){
+    this.cursosService.eliminarCurso(id).subscribe(console.log);
   }
 
 }

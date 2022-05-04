@@ -1,13 +1,9 @@
-.grid-toolbar{
-    grid-area: toolbar;
+  .grid-toolbar{
+      grid-area: toolbar;
   }
-  
+    
   .grid-menu{
     grid-area: menu;
-  }
-
-  .grid-content{
-    grid-area: content;
   }
 
   .grid-container{

@@ -15,7 +15,7 @@ import { CoreRoutingModule } from './core-routing.module';
   declarations: [
     LoginComponent,
     AyudaComponent, 
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -26,7 +26,6 @@ import { CoreRoutingModule } from './core-routing.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreRoutingModule,
     FormsModule,
     ReactiveFormsModule,
   ],

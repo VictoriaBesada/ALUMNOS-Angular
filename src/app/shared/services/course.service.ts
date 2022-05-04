@@ -29,6 +29,7 @@ export class CursosService {
   }
 
   eliminarCurso(idCurso: string){
+    return this.http.delete<Curso>(`${this.API_URL}/cursos/${idCurso}`).pipe(catchError(this.manejoError));
   }
 
   private manejoError(error: HttpErrorResponse){

@@ -7,15 +7,25 @@ import { AuthGuard } from "./core/guards/auth-guard.guard";
 
 
 const routes : Routes = [
-    {path : '', component: LoginComponent, canActivate: [AuthGuard] },
-    {path : 'login', component: LoginComponent},
+    {path: 'login', component: LoginComponent, canActivate:[AuthGuard] },
+    {path: '', redirectTo: 'login', pathMatch:'full' },
     {path : 'ayuda', component: AyudaComponent},
     {path: '**', component: PageNotFoundComponent},
-    {path:'home', loadChildren: () => import('./core/core.module').then(m => m.CoreModule)},
-    {path:'alumnos', loadChildren: () => import('./featured/alumnos-folder/alumnos.module').then(m => m.AlumnosModule)},
-    {path:'cursos', loadChildren: () => import('./featured/cursos-folder/cursos.module').then(m => m.CursosModule)},
-    {path:'inscripciones', loadChildren: () => import('./featured/inscripciones-folder/inscripciones.module').then(m => m.InscripcionesModule)}
-
+    {
+      path:'home', 
+      loadChildren: () => import('./core/core.module').then((m) => m.CoreModule)
+    },
+    {
+      path:'alumnos', 
+      loadChildren: () => import('./featured/alumnos-folder/alumnos.module').then((m) => m.AlumnosModule)},
+    {
+      path:'cursos', 
+      loadChildren: () => import('./featured/cursos-folder/cursos.module').then((m) => m.CursosModule)
+    },
+    {
+      path:'inscripciones', 
+      loadChildren: () => import('./featured/inscripciones-folder/inscripciones.module').then((m) => m.InscripcionesModule)
+    }
 ]
 
 @NgModule({
