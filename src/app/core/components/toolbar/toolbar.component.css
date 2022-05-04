@@ -1,9 +1,7 @@
 .toolbar{
     color: white;
     background-color: skyblue;
-    text-align: center;
     font-family: 'Work Sans', sans-serif;
-    margin: 12px;
-    margin-bottom: 0px;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
 }

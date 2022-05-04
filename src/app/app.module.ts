@@ -15,6 +15,8 @@ import { CommonModule } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { AlumnosModule } from './featured/alumnos-folder/alumnos.module';
 import { InscripcionesModule } from './featured/inscripciones-folder/inscripciones.module'
+import { MenuComponent } from './core/components/menu/menu.component';
+import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
 
 @NgModule({
 
@@ -22,6 +24,8 @@ import { InscripcionesModule } from './featured/inscripciones-folder/inscripcion
     AppComponent,
     TitleSizeDirective,
     Cursos,
+    MenuComponent,
+    ToolbarComponent
   ],
   imports: [
     CommonModule,
@@ -31,11 +35,6 @@ import { InscripcionesModule } from './featured/inscripciones-folder/inscripcion
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    CursosModule,
-    AlumnosModule,
-    InscripcionesModule,
-    CoreModule
-
   ],
   providers: [ AutenticacionService],
   bootstrap: [AppComponent]

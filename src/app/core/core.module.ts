@@ -2,8 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MenuComponent } from './components/menu/menu.component';
-import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AyudaComponent } from './components/ayuda/ayuda.component';
 import { LoginComponent } from './components/autenticacion/login/login.component';
 import { AppMaterialModule } from '../shared/app.material.module';
@@ -15,8 +13,6 @@ import { CoreRoutingModule } from './core-routing.module';
 
 @NgModule({
   declarations: [
-    MenuComponent,
-    ToolbarComponent,
     LoginComponent,
     AyudaComponent, 
     PageNotFoundComponent
@@ -32,11 +28,9 @@ import { CoreRoutingModule } from './core-routing.module';
     ReactiveFormsModule,
     CoreRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
-    MenuComponent,
-    ToolbarComponent,
     LoginComponent,
     AyudaComponent, 
     PageNotFoundComponent,
