@@ -18,7 +18,6 @@ import { ToolbarComponent } from './core/components/toolbar/toolbar.component';
   declarations: [
     AppComponent,
     TitleSizeDirective,
-    Cursos,
     MenuComponent,
     ToolbarComponent
   ],

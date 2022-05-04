@@ -7,6 +7,7 @@ import { EditarCursoDialogComponent } from './cursos-editar/cursos.component';
 import { CursosDetalleComponent } from './cursos-detalle/cursos-detalle.component';
 import { Cursos } from './cursos-component/cursos-component.component';
 import { CursosRoutingModule } from './cursos-routing.module';
+import { NuevoCursoComponent } from './nuevo-curso/nuevo-curso.component';
 
 
 @NgModule({
@@ -14,6 +15,8 @@ import { CursosRoutingModule } from './cursos-routing.module';
     ListaCursosComponent,
     EditarCursoDialogComponent,
     CursosDetalleComponent,
+    Cursos,
+    NuevoCursoComponent,
   ],
   imports: [
     CommonModule,
@@ -24,6 +27,8 @@ import { CursosRoutingModule } from './cursos-routing.module';
     ListaCursosComponent,
     EditarCursoDialogComponent,
     CursosDetalleComponent,
+    NuevoCursoComponent,
+    Cursos
   ],
   providers: [
     CursosService

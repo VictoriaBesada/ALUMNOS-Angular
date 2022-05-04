@@ -21,7 +21,7 @@ export class CursosService {
   }
 
   crearCurso(curso: Curso){
-    
+    return this.http.post<Curso>(`${this.API_URL}/cursos/`, curso).pipe(catchError(this.manejoError));
   }
 
   modificarCurso(curso: Curso){
