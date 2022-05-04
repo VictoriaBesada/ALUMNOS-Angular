@@ -1,26 +1,3 @@
-// import { NgModule } from '@angular/core';
-// import { RouterModule, Routes } from '@angular/router';
-// import { Cursos } from './cursos-component/cursos-component.component';
-// import { ListaCursosComponent } from './cursos-lista/cursos-observables.component';
-// import { CursosDetalleComponent } from './cursos-detalle/cursos-detalle.component';
-
-// const routes: Routes = [
-//   {path:'', component: Cursos, children: 
-//   [
-//     {
-//       path: 'cursos', component: ListaCursosComponent
-//   },
-//   {
-//     path: 'cursos/:id', component: CursosDetalleComponent
-//   }
-//   ]}
-// ];
-
-// @NgModule({
-//   imports: [RouterModule.forChild(routes)],
-//   exports: [RouterModule]
-// })
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListaCursosComponent } from './cursos-lista/cursos-observables.component';
@@ -30,7 +7,6 @@ import { MenuComponent } from 'src/app/core/components/menu/menu.component';
 import { LoginComponent } from 'src/app/core/components/autenticacion/login/login.component';
 
 const routes: Routes = [
-
   {path: '',
   component: MenuComponent,
 
@@ -44,5 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-
 export class CursosRoutingModule { }

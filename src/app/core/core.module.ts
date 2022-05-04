@@ -4,13 +4,13 @@ import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MenuComponent } from './components/menu/menu.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
-import { CoreRoutingModule } from './core.routing.module';
 import { AyudaComponent } from './components/ayuda/ayuda.component';
 import { LoginComponent } from './components/autenticacion/login/login.component';
 import { AppMaterialModule } from '../shared/app.material.module';
 import { AppRoutingModule } from '../app.routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
+import { CoreRoutingModule } from './core-routing.module';
 
 
 @NgModule({
@@ -22,6 +22,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     PageNotFoundComponent
   ],
   imports: [
+    CommonModule,
+    CoreRoutingModule,
     CommonModule,
     AppMaterialModule,
     AppRoutingModule,
@@ -39,6 +41,5 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     AyudaComponent, 
     PageNotFoundComponent,
   ]
-
 })
 export class CoreModule { }

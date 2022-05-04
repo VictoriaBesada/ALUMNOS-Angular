@@ -1,13 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ABMDeAlumnosComponent } from "./featured/inscripciones-folder/abm-de-alumnos/abm-de-alumnos.component";
 import { AyudaComponent } from "./core/components/ayuda/ayuda.component";
-import { ListaAlumnosComponent } from "./featured/alumnos-folder/lista-alumnos/lista-alumnos.component";
 import { PageNotFoundComponent } from "./core/components/page-not-found/page-not-found.component";
-import { ListaCursosComponent } from "./featured/cursos-folder/cursos-lista/cursos-observables.component";
 import { LoginComponent } from "./core/components/autenticacion/login/login.component";
 import { AuthGuard } from "./core/guards/auth-guard.guard";
-import { MenuComponent } from "./core/components/menu/menu.component";
 
 
 const routes : Routes = [
