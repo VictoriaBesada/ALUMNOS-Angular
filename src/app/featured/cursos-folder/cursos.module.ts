@@ -8,6 +8,8 @@ import { CursosDetalleComponent } from './cursos-detalle/cursos-detalle.componen
 import { Cursos } from './cursos-component/cursos-component.component';
 import { CursosRoutingModule } from './cursos-routing.module';
 import { NuevoCursoComponent } from './nuevo-curso/nuevo-curso.component';
+import { AppMaterialModule } from 'src/app/shared/app.material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,6 +24,9 @@ import { NuevoCursoComponent } from './nuevo-curso/nuevo-curso.component';
     CommonModule,
     CursosRoutingModule,
     SharedModule,
+    AppMaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     ListaCursosComponent,

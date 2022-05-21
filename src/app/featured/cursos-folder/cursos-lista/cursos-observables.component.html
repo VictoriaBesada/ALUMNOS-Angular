@@ -1,5 +1,7 @@
 <h1 class="heading" titleSize>Cursos</h1>
 
+<button mat-button color="primary" routerLink="/nuevo-curso" class="botonNuevoCurso">(+) Agregar nuevo curso</button>
+
 <div class="contain componenteCursos" *ngFor="let curso of cursos">
     <mat-card>
         <mat-card-title>
@@ -24,4 +26,3 @@
         </mat-card-actions>
     </mat-card>    
 </div>
-<router-outlet></router-outlet>

@@ -1,10 +1,14 @@
 .demo-table {
   width: 100%;
   text-align: center;
+  border-radius: 4px;
+
 }
 
 .tabla{
   text-align: center;
+  border-radius: 4px;
+
 }
 
 .mat-header-cell{
@@ -29,4 +33,6 @@
 .componenteAlumnos{
   width: 100%;
   text-align: center;
+  border-radius: 4px;
+
 }

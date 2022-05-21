@@ -69,6 +69,4 @@ export class ListaAlumnosComponent {
   dataSource = dataAlumnos;
   clickedRows = new Set<ListaAlumnos>();
 
-
-  
 }

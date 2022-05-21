@@ -33,9 +33,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
         MatMenuModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        FormsModule,
-        ReactiveFormsModule
-
     ],
     declarations: [
     ]

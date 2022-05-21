@@ -1,0 +1,22 @@
+<h1 class="heading">Registrar nuevo alumno</h1>
+
+<div class="nuevoAlumnoContainer">
+  <form [formGroup]="formulario" (ngSubmit)="agregarAlumno()" class="row g-3">
+  <div class="alinearInputs">
+    <div class="col-auto">
+      <input type="text" placeholder="Legajo" class="form-control" formControlName="legajo"> <br>
+    </div>
+    <div class="col-auto">
+      <input type="text" placeholder="Nombre" class="form-control" formControlName="nombre"> <br>
+    </div>
+    <div class="col-auto">
+      <input type="text" placeholder="Apellido" class="form-control" formControlName="apellido"> <br>
+    </div>
+    <div class="col-auto">
+      <input type="text" placeholder="Asistencias" class="form-control" formControlName="asistencias"> <br>
+    </div>
+  </div>
+  <button type="submit" [disabled]="formulario.invalid" class="btn btn-success">Agregar</button>
+</form>
+
+</div>

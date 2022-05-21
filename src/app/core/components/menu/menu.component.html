@@ -1,5 +1,5 @@
 <mat-sidenav-container>
-    <div *ngIf="sesionActiva.activa">
+    <!-- <div *ngIf="sesionActiva.activa"> -->
         <mat-sidenav #sidenav="matSidenav" mode="side" opened="true">
             <div class="navbar">
                 <ul class="nav flex-column">
@@ -22,7 +22,7 @@
                 </ul>
             </div>
         </mat-sidenav>
-    </div>
+    <!-- </div> -->
     <mat-sidenav-content>
         <div class="contenido mat-elevation-z8">
             <router-outlet>

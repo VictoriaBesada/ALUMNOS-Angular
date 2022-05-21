@@ -9,6 +9,7 @@ import { AppRoutingModule } from '../app.routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 import { CoreRoutingModule } from './core-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -18,16 +19,14 @@ import { CoreRoutingModule } from './core-routing.module';
     PageNotFoundComponent,
   ],
   imports: [
-    CommonModule,
     CoreRoutingModule,
     CommonModule,
+    BrowserModule,
     AppMaterialModule,
-    AppRoutingModule,
     SharedModule,
+    AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule,
-    FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     LoginComponent,

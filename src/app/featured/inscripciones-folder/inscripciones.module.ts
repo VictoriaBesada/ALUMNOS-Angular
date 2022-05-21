@@ -5,11 +5,13 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { ABMDeAlumnosComponent } from './abm-de-alumnos/abm-de-alumnos.component';
 import { AppMaterialModule } from 'src/app/shared/app.material.module';
 import { InscripcionesRoutingModule } from './inscripciones-routing.module';
+import { NuevoAlumnoComponent } from './nuevo-alumno/nuevo-alumno.component';
 
 
 @NgModule({
   declarations: [
-    ABMDeAlumnosComponent
+    ABMDeAlumnosComponent,
+    NuevoAlumnoComponent
   ],
   imports: [
     CommonModule,
@@ -18,11 +20,10 @@ import { InscripcionesRoutingModule } from './inscripciones-routing.module';
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
-    ReactiveFormsModule,
-    FormsModule,
   ],
   exports: [
-    ABMDeAlumnosComponent
+    ABMDeAlumnosComponent,
+    NuevoAlumnoComponent
   ]
 })
 export class InscripcionesModule { }
