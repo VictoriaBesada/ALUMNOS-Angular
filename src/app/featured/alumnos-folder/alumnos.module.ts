@@ -7,6 +7,8 @@ import { AlumnosDetalleComponent } from './alumnos-detalle/alumnos-detalle.compo
 import { ListaAlumnosComponent } from './lista-alumnos/lista-alumnos.component';
 import { MatTableModule } from '@angular/material/table';
 import { AlumnosRoutingModule } from './alumnos-routing.module';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { AlumnosRoutingModule } from './alumnos-routing.module';
     FormsModule,
     ReactiveFormsModule,
     AppMaterialModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule,
+    MatSnackBarModule
   ],
   exports: [
     ListaAlumnosComponent,

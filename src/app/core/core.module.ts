@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 import { CoreRoutingModule } from './core-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
+import { Estudiantes } from './models/alumno';
 
 
 @NgModule({

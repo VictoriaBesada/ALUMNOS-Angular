@@ -1,22 +1,26 @@
-<h1 class="heading">Registrar nuevo alumno</h1>
+<h1 heading>Registrar nuevo alumno</h1>
+<hr hr>
+
 
 <div class="nuevoAlumnoContainer">
-  <form [formGroup]="formulario" (ngSubmit)="agregarAlumno()" class="row g-3">
-  <div class="alinearInputs">
-    <div class="col-auto">
-      <input type="text" placeholder="Legajo" class="form-control" formControlName="legajo"> <br>
-    </div>
-    <div class="col-auto">
-      <input type="text" placeholder="Nombre" class="form-control" formControlName="nombre"> <br>
-    </div>
-    <div class="col-auto">
-      <input type="text" placeholder="Apellido" class="form-control" formControlName="apellido"> <br>
-    </div>
-    <div class="col-auto">
-      <input type="text" placeholder="Asistencias" class="form-control" formControlName="asistencias"> <br>
-    </div>
-  </div>
-  <button type="submit" [disabled]="formulario.invalid" class="btn btn-success">Agregar</button>
-</form>
+  <form [formGroup]="formulario" (ngSubmit)="agregarAlumno()">
+      <mat-form-field appearance="fill">
+          <mat-label>Legajo</mat-label>
+          <input type="number" matInput formControlName="legajo">
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input type="text" matInput formControlName="nombre">
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+          <mat-label>Apellido</mat-label>
+          <input type="text" matInput formControlName="apellido">
+      </mat-form-field><br>
+      <mat-form-field appearance="fill">
+          <mat-label>Asistencias</mat-label>
+          <input type="number" matInput formControlName="asistencias">
+      </mat-form-field><br>
 
+      <button mat-raised-button type="submit" [disabled]="formulario.invalid">Agregar</button>
+  </form>
 </div>

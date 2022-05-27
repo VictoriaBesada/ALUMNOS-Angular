@@ -1,8 +1,3 @@
-.heading{
-    text-align: center;
-    font-weight: 500;
-  }
-  
 .componenteCursos{
     width: 100%;
     text-align: center;
@@ -11,4 +6,14 @@
 
 .botonNuevoCurso{
   margin-bottom: 2rem;
+}
+
+.containerCursos{
+  background-color: silver;
+  border-radius: 4px;
+  color: black;
+}
+
+.divider{
+  color: black;
 }

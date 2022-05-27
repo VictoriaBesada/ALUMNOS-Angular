@@ -1,16 +1,18 @@
-<h1 class="heading" titleSize>Inscripciones</h1>
+<h1 heading>Inscripciones</h1>
+<hr hr>
+
 <button mat-button color="primary" routerLink="/nuevo-alumno" class="botonNuevoAlumno">(+) Agregar nuevo alumno</button>
 
 <div class="componenteInscripciones">
-<!-- <h3 class="aviso heading">*Los alumnos con insuficientes asistencias son:{{ personasFiltradas$ | async | json }}</h3> -->
-<div *ngFor="let alumno of alumnos" class="alumnos">
+<div *ngFor="let estudiante of estudiantes" class="alumnos">
   <table class="table tabla">
-    <h4>Legajo ({{ alumno.legajo }}) </h4>
-    <h4>Nombre {{ alumno.nombre }} </h4>
-    <h4>Apellido {{ alumno.apellido }}</h4>
-    <h4>Asistencias {{ alumno.asistencias }} </h4>
-    <button (click)="eliminarAlumno(alumno.legajo)" class="btn btn-danger">Eliminar</button>
+    <h4>Legajo ({{ estudiante.legajo }}) </h4>
+    <h4>Nombre {{ estudiante.nombre }} </h4>
+    <h4>Apellido {{ estudiante.apellido }}</h4>
+    <h4>Asistencias {{ estudiante.asistencias }} </h4>
+    <button (click)="eliminarAlumno(estudiante.id)" mat-button color="warn">Eliminar</button>
   </table>
+  
 </div>
 
 

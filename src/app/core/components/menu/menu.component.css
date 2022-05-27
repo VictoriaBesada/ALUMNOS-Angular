@@ -1,7 +1,7 @@
 mat-sidenav {
     margin: 12px;
     border-right: none;
-    background-color: skyblue;
+    background-color: #A40B0B;
     padding: 20px;
     text-align: center;
     font-family: 'Work Sans', sans-serif;
@@ -14,7 +14,7 @@ mat-sidenav {
     margin: 12px;
     margin-left: 32px;
     padding: 16px;
-    background-color: silver;
+    /* background-color: silver; */
 }
 
 .mat-drawer-container{

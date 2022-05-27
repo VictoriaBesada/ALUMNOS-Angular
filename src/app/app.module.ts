@@ -4,7 +4,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './shared/app.material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TitleSizeDirective } from './shared/directives/titleSize.directive';
 import { AppRoutingModule } from './app.routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { Cursos } from './featured/cursos-folder/cursos-component/cursos-component.component';
@@ -20,14 +19,14 @@ import { CoreModule } from './core/core.module';
 import { AlumnosModule } from './featured/alumnos-folder/alumnos.module';
 import { CursosModule } from './featured/cursos-folder/cursos.module';
 import { InscripcionesModule } from './featured/inscripciones-folder/inscripciones.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
 
   declarations: [
     AppComponent,
-    TitleSizeDirective,
     MenuComponent,
-    ToolbarComponent
+    ToolbarComponent,
   ],
   imports: [
     CoreModule,
@@ -46,6 +45,7 @@ import { InscripcionesModule } from './featured/inscripciones-folder/inscripcion
     CursosRoutingModule,
     AlumnosRoutingModule,
     InscripcionesRoutingModule,
+    StoreModule.forRoot({}, {}),
   ],
   providers: [ AutenticacionService],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, filter, Observable, throwError } from 'rxjs';
 import { Curso } from 'src/app/core/models/courses';
@@ -8,6 +8,8 @@ import { Curso } from 'src/app/core/models/courses';
 })
 export class CursosService {
   private readonly API_URL = 'https://626765be78638336421ee4dd.mockapi.io';
+  serviceURL = "https://626765be78638336421ee4dd.mockapi.io/cursos";
+
   constructor(
     private http: HttpClient
   ) { }
@@ -22,6 +24,18 @@ export class CursosService {
 
   crearCurso(curso: Curso){
     return this.http.post<Curso>(`${this.API_URL}/cursos/`, curso).pipe(catchError(this.manejoError));
+  }
+
+  obtenerDatosCursoObservableById(id: number): Observable<any> {
+
+    let params = new HttpParams();
+    params = params.append('method', 'getCourses');
+    params = params.append('IdCourse', id.toString().trim());
+    let Respuesta = this.http.get(this.serviceURL, { params: params });
+
+
+    return Respuesta.pipe(catchError(this.manejoError));
+
   }
 
   modificarCurso(curso: Curso){

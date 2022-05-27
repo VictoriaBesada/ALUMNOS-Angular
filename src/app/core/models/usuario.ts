@@ -5,4 +5,5 @@ export interface Usuario{
     correo: string;
     contrasena: string;
     rol: string;
+    imagen: ImageData;
 }

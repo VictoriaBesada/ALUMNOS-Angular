@@ -3,12 +3,19 @@ import { CommonModule } from '@angular/common';
 import { AppMaterialModule } from './app.material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NombreCurso } from './pipes/nombre-cursos.pipe';
+import { HeadingDirective } from './directives/heading.directive';
+import { HrDirective } from './directives/hr.directive';
+import { formatoDatosGeneralPipe } from './pipes/formatos.pipe';
+import { RandomApiService } from './services/api.service';
 
 
 
 @NgModule({
   declarations: [
-    NombreCurso
+    NombreCurso,
+    HeadingDirective,
+    HrDirective,
+    formatoDatosGeneralPipe,
   ],
   imports: [
     CommonModule,
@@ -18,7 +25,10 @@ import { NombreCurso } from './pipes/nombre-cursos.pipe';
   exports: [
     NombreCurso,
     AppMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HeadingDirective,
+    HrDirective,
+    formatoDatosGeneralPipe,
   ]
 })
 export class SharedModule { }

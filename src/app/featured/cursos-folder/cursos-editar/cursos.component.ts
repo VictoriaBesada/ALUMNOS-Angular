@@ -62,6 +62,8 @@ export class EditarCursoDialogComponent implements OnInit {
       profesor: this.formulario.value.profesor,
       fechaInicio: this.formulario.value.fechaInicio,
       fechaFin: this.formulario.value.fechaFin,
+      imagen: this.data.imagen,
+      active: this.data.active,
       estudiantes: this.data.estudiantes
     } 
     console.log(curso);

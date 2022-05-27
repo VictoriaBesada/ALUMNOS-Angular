@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Estudiante } from 'src/app/core/models/alumno';
-import { AlumnoService } from 'src/app/shared/services/alumnos.services';
+import { Estudiantes } from 'src/app/core/models/alumno';
 import { Observable } from 'rxjs';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { estudiantesService } from 'src/app/shared/services/estudiantes.service';
 
 @Component({
   selector: 'app-abm-de-alumnos',
@@ -10,42 +12,52 @@ import { Observable } from 'rxjs';
   styleUrls: ['./abm-de-alumnos.component.css']
 })
 
-export class ABMDeAlumnosComponent implements OnInit, OnDestroy {
+export class ABMDeAlumnosComponent implements OnInit {
 
-  alumnos: any;    
-  personasFiltradas$!: Observable<Estudiante[]>
-  alumnosSuscripcion!: any;
+  estudiantes: Estudiantes[] = [];
+  formulario: FormGroup;
 
+  constructor(private alumnoService: estudiantesService,
+    private fb: FormBuilder,
+    private router: Router,
+    private dialog: MatDialog) {
 
-  
-  formulario: FormGroup = new FormGroup({
-    legajo: new FormControl('', [Validators.required]),
-    nombre: new FormControl('', [Validators.required]),
-    apellido: new FormControl('', [Validators.required]),
-    asistencias: new FormControl('', [Validators.required])
-  });
+    this.formulario = this.fb.group({
+      legajo: new FormControl('', [Validators.required]),
+      nombre: new FormControl('', [Validators.required]),
+      apellido: new FormControl('', [Validators.required]),
+      asistencias: new FormControl('', [Validators.required])
+    });
 
-  constructor(private alumnoService: AlumnoService) { }
-
-  ngOnInit(): void {
-    this.personasFiltradas$ = this.alumnoService.obtenerDatosFiltrados();
-    this.alumnoService.obtenerAlumnosObservable().subscribe((alumnos)=>{
-      this.alumnos = alumnos;
-    })
   }
 
-  eliminarAlumno(legajo: number){
-    this.alumnoService.eliminarAlumno(legajo);
-  } 
 
-  agregarAlumno(){
+  ngOnInit(): void {
+    this.alumnoService.obtenerEstudiantes().subscribe((estudiantes: Estudiantes[]) => {
+      this.estudiantes = estudiantes;
+    });
+  }
+
+  eliminarAlumno(id: number) {
+    this.alumnoService.eliminarAlumno(id).subscribe(console.log);
+  }
+
+  // agregarAlumno(){
+  //   console.log(this.formulario.value);
+  //   this.alumnoService.agregarAlumno(this.formulario.value).subscribe(data => {
+  //     console.log(data);
+  //   });
+  //   this.router.navigate(['/inscripciones']);
+  // }
+
+  agregarAlumno() {
     this.alumnoService.agregarAlumno(this.formulario.value);
   }
 
-  ngOnDestroy(): void {
-    if (this.alumnosSuscripcion) {
-      this.alumnosSuscripcion.unsubscribe();
-    }
-  }
+  // ngOnDestroy(): void {
+  //   if (this.alumnosSuscripcion) {
+  //     this.alumnosSuscripcion.unsubscribe();
+  //   }
+  // }
 
 }

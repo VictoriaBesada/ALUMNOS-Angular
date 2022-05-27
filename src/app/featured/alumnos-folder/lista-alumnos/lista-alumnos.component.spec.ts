@@ -23,5 +23,4 @@ describe('ListaAlumnosComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-
 });

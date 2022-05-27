@@ -1,1 +1,25 @@
-<p>detalle del curso</p>
+<h1 heading>Detalle de Curso {{Curso?.camada}} - {{Curso?.nombre}}</h1>
+<hr hr>
+
+
+<mat-list class="detalleContainer">
+    <mat-list-item class="color">
+        <p class="espaciado"><img src="{{Curso?.imagen}}" class="imagen"></p>
+        <h4 mat-line>Camada: {{Curso?.camada}}</h4>
+        <p mat-line>Nombre: {{Curso?.nombre}}</p>
+        <p mat-line>Descripcion: {{Curso?.descripcion}}</p>
+        <p mat-line>Estado: {{Curso | nombreCurso : 'activo'}}</p>
+    </mat-list-item>
+    <br>
+    <button mat-button color="primary" routerLink="/inscripciones/{{Curso?.id}}">Administrar incripciones</button>
+    <br>
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+    <h2 appFormatoTitulos class="color">Estudiantes</h2>
+    <mat-list >
+        <mat-list-item *ngFor="let estudiante of Curso.estudiantes">
+            <p class="color">Alumno: {{estudiante.nombre}}, {{estudiante.apellido}}</p>
+        </mat-list-item>
+    </mat-list>
+</mat-list>
