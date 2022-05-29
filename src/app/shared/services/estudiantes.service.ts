@@ -39,6 +39,9 @@ export class estudiantesService {
         return this.http.delete<Estudiantes>(`${this.API_URL}/estudiantes/${id}`).pipe(catchError(this.manejoError));
       }
 
+      modificarAlumno(estudiantes: Estudiantes){
+        return this.http.put(`${this.API_URL}/estudiantes/${estudiantes.id}`, estudiantes);
+      }
       // agregarAlumno(estudiante: Estudiante){
       //   return this.http.post<Estudiante>(`${this.API_URL}/estudiantes/`, estudiante).pipe(catchError(this.manejoError));
       // }

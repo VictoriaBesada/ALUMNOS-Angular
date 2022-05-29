@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Usuario } from 'src/app/core/models/usuario';
@@ -10,6 +10,7 @@ import { AutenticacionService } from 'src/app/shared/services/autenticacion.serv
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
   formulario: FormGroup = new FormGroup({
     correo: new FormControl(''),
@@ -24,17 +25,15 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  login(){
+  login() {
     const correo = this.formulario.value.correo;
     const contrasena = this.formulario.value.contrasena;
-
-    this.auth.login(correo, contrasena).subscribe((data: Usuario[]) => {
-      if(data.length === 1){
-        console.log('Usuario logeado exitosamente', data);
-        this.auth.establecerSesion(true, data[0]);
+    this.auth.login(correo, contrasena).subscribe((usuarioLogeado: Usuario[]) => {
+      if (usuarioLogeado.length === 1) {
+        this.auth.establecerSesion(true, usuarioLogeado[0]);
         this.router.navigate(['home']);
-      }else{
-        console.log('Error de autenticacion');
+      } else {
+        // console.log('Error de autenticacion');
       }
     });
   }

@@ -6,12 +6,14 @@ import { ABMDeAlumnosComponent } from './abm-de-alumnos/abm-de-alumnos.component
 import { AppMaterialModule } from 'src/app/shared/app.material.module';
 import { InscripcionesRoutingModule } from './inscripciones-routing.module';
 import { NuevoAlumnoComponent } from './nuevo-alumno/nuevo-alumno.component';
+import { EditarAlumnoComponent } from './editar-alumno/editar-alumno.component';
 
 
 @NgModule({
   declarations: [
     ABMDeAlumnosComponent,
-    NuevoAlumnoComponent
+    NuevoAlumnoComponent,
+    EditarAlumnoComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { NuevoAlumnoComponent } from './nuevo-alumno/nuevo-alumno.component';
   ],
   exports: [
     ABMDeAlumnosComponent,
-    NuevoAlumnoComponent
+    NuevoAlumnoComponent,
+    EditarAlumnoComponent
   ]
 })
 export class InscripcionesModule { }

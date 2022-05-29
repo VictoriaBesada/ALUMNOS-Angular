@@ -3,24 +3,24 @@
 
 
 <div class="nuevoAlumnoContainer">
-  <form [formGroup]="formulario" (ngSubmit)="agregarAlumno()">
-      <mat-form-field appearance="fill">
-          <mat-label>Legajo</mat-label>
-          <input type="number" matInput formControlName="legajo">
-      </mat-form-field><br>
-      <mat-form-field appearance="fill">
-          <mat-label>Nombre</mat-label>
-          <input type="text" matInput formControlName="nombre">
-      </mat-form-field><br>
-      <mat-form-field appearance="fill">
-          <mat-label>Apellido</mat-label>
-          <input type="text" matInput formControlName="apellido">
-      </mat-form-field><br>
-      <mat-form-field appearance="fill">
-          <mat-label>Asistencias</mat-label>
-          <input type="number" matInput formControlName="asistencias">
-      </mat-form-field><br>
+    <form [formGroup]="formulario" (ngSubmit)="agregarAlumno()">
+        <mat-form-field appearance="fill">
+            <mat-label>Legajo</mat-label>
+            <input type="number" matInput formControlName="legajo">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input type="text" matInput formControlName="nombre">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Apellido</mat-label>
+            <input type="text" matInput formControlName="apellido">
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+            <mat-label>Asistencias</mat-label>
+            <input type="number" matInput formControlName="asistencias">
+        </mat-form-field><br>
 
-      <button mat-raised-button type="submit" [disabled]="formulario.invalid">Agregar</button>
-  </form>
+        <button mat-raised-button type="submit" [disabled]="formulario.invalid">Agregar</button>
+    </form>
 </div>

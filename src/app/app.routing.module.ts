@@ -1,36 +1,26 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { PageNotFoundComponent } from "./core/components/page-not-found/page-not-found.component";
 import { LoginComponent } from "./core/components/autenticacion/login/login.component";
 import { AuthGuard } from "./core/guards/auth-guard.guard";
 
 
-const routes : Routes = [
-    // {path: 'login', component: LoginComponent, canActivate:[AuthGuard] },
-    {path: '', redirectTo: 'login', pathMatch:'full' },
-    {path: 'login', component: LoginComponent},
-    // {path: '**', component: PageNotFoundComponent},
-    // {
-    //   path:'home', 
-    //   loadChildren: () => import('./core/core.module').then((m) => m.CoreModule)
-    // },
-    // {
-    //   path:'alumnos', 
-    //   loadChildren: () => import('./featured/alumnos-folder/alumnos.module').then((m) => m.AlumnosModule)},
-    // {
-    //   path:'cursos', 
-    //   loadChildren: () => import('./featured/cursos-folder/cursos.module').then((m) => m.CursosModule)
-    // },
-    // {
-    //   path:'inscripciones', 
-    //   loadChildren: () => import('./featured/inscripciones-folder/inscripciones.module').then((m) => m.InscripcionesModule)
-    // }
+const routes: Routes = [
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  }
 ]
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
-  })
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
 
-export class AppRoutingModule{}
+export class AppRoutingModule { }
 

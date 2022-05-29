@@ -4,15 +4,15 @@
 <button mat-button color="primary" routerLink="/nuevo-alumno" class="botonNuevoAlumno">(+) Agregar nuevo alumno</button>
 
 <div class="componenteInscripciones">
-<div *ngFor="let estudiante of estudiantes" class="alumnos">
-  <table class="table tabla">
-    <h4>Legajo ({{ estudiante.legajo }}) </h4>
-    <h4>Nombre {{ estudiante.nombre }} </h4>
-    <h4>Apellido {{ estudiante.apellido }}</h4>
-    <h4>Asistencias {{ estudiante.asistencias }} </h4>
-    <button (click)="eliminarAlumno(estudiante.id)" mat-button color="warn">Eliminar</button>
-  </table>
-  
-</div>
+  <div *ngFor="let estudiante of estudiantes" class="alumnos">
+    <table class="table tabla">
+      <h4>Legajo ({{ estudiante.legajo }}) </h4>
+      <h4>Nombre {{ estudiante.nombre }} </h4>
+      <h4>Apellido {{ estudiante.apellido }}</h4>
+      <h4>Asistencias {{ estudiante.asistencias }} </h4>
 
+      <button mat-stroked-button color="primary" (click)="abrirDialogModificar(estudiante)">Modificar</button>
+      <button mat-stroked-button color="warn" (click)="eliminarAlumno(estudiante.id)">Eliminar</button>
+    </table>
 
+  </div>

@@ -25,7 +25,6 @@ import { StoreModule } from '@ngrx/store';
 
   declarations: [
     AppComponent,
-    MenuComponent,
     ToolbarComponent,
   ],
   imports: [

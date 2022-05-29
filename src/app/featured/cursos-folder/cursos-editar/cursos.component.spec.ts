@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { EditarCursoDialogComponent } from '../cursos-editar/cursos.component'
 
+
 describe('EditarCursoDialogComponent', () => {
   let component: EditarCursoDialogComponent;
   let fixture: ComponentFixture<EditarCursoDialogComponent>;

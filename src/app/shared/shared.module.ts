@@ -6,7 +6,6 @@ import { NombreCurso } from './pipes/nombre-cursos.pipe';
 import { HeadingDirective } from './directives/heading.directive';
 import { HrDirective } from './directives/hr.directive';
 import { formatoDatosGeneralPipe } from './pipes/formatos.pipe';
-import { RandomApiService } from './services/api.service';
 
 
 

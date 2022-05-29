@@ -2,9 +2,11 @@ table {
   width: 100%;
   background-color: silver;
 }
+
 mat-header-cell, mat-cell {
   justify-content: left;
 }
+
 .left-text {
   text-align: left;
 }

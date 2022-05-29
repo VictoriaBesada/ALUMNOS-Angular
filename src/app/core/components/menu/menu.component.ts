@@ -14,18 +14,19 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   sesionActiva!: any;
 
   constructor(
     private auth: AutenticacionService,
-    private router: Router
-  ){
+    private router: Router,
+  ) {
     this.sesionActiva = JSON.parse(localStorage.getItem('sesion') || '{}');
   }
 
-  logout(){
+  logout() {
     this.auth.logout();
-    this.router.navigate(['login']);
+    this.router.navigate(['']);
 
   }
 

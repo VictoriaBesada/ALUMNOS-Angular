@@ -1,14 +1,17 @@
-import { Component, Inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Curso } from 'src/app/core/models/courses';
 import { Profesor } from 'src/app/core/models/profesores';
 import { CursosService } from '../../../shared/services/course.service';
+
+
 @Component({
   selector: 'app-editar-curso-dialog',
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css']
 })
+
 export class EditarCursoDialogComponent implements OnInit {
   formulario!: FormGroup;
   profesores: Profesor[] = [{

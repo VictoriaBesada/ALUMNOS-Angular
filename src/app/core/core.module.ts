@@ -2,22 +2,22 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { AyudaComponent } from './components/ayuda/ayuda.component';
 import { LoginComponent } from './components/autenticacion/login/login.component';
 import { AppMaterialModule } from '../shared/app.material.module';
 import { AppRoutingModule } from '../app.routing.module';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 import { CoreRoutingModule } from './core-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { Estudiantes } from './models/alumno';
+import { HttpClientModule } from '@angular/common/http';
+import { MenuComponent } from './components/menu/menu.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    AyudaComponent, 
     PageNotFoundComponent,
+    MenuComponent
   ],
   imports: [
     CoreRoutingModule,
@@ -27,12 +27,14 @@ import { Estudiantes } from './models/alumno';
     SharedModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    NgxSpinnerModule
   ],
   exports: [
     LoginComponent,
-    AyudaComponent, 
     PageNotFoundComponent,
+    MenuComponent
   ]
 })
 export class CoreModule { }

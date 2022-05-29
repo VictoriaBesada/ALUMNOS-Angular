@@ -1,7 +1,5 @@
-import { Component, OnInit, ɵsetClassMetadata } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-
-
 import { ActivatedRoute } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { CursosService } from '../../../shared/services/course.service';
@@ -9,7 +7,6 @@ import { AppStore } from 'src/app/store/app.store';
 import { Store } from '@ngrx/store';
 import { selectCourseId } from 'src/app/store/selector/curso.selector';
 import { CargaCursos, CargaIdCursoExitosa } from 'src/app/store/action/curso.action';
-import { Clases } from 'src/app/shared/clases/clases';
 
 
 @Component({
@@ -17,8 +14,10 @@ import { Clases } from 'src/app/shared/clases/clases';
   templateUrl: './cursos-detalle.component.html',
   styleUrls: ['./cursos-detalle.component.css']
 })
+
 export class CursosDetalleComponent implements OnInit {
 
+  sesionActiva!: any;
   courseId: number = 0;
   routeSubcription!: Subscription;
   Curso: any;
@@ -28,12 +27,15 @@ export class CursosDetalleComponent implements OnInit {
   ABMInscripciones: boolean = false;
   currentPerson: number = 0;
   readonly: boolean = false;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private cursoService: CursosService,
     public dialogoRef: MatDialog,
     private store: Store<AppStore>
-  ) { }
+  ) {
+    this.sesionActiva = JSON.parse(localStorage.getItem('sesion') || '{}');
+  }
 
   ngOnInit(): void {
     this.routeSubcription = this.activatedRoute.params.subscribe(
@@ -59,6 +61,5 @@ export class CursosDetalleComponent implements OnInit {
 
   ngOnDestroy() {
     this.routeSubcription.unsubscribe();
-    // this.CursoSuscripcion.unsubscribe();
   }
 }

@@ -7,21 +7,22 @@ import { LoginComponent } from '../components/autenticacion/login/login.componen
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
+
   constructor(
     private router: Router
-  ){}
-  
+  ) { }
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     let sesion = JSON.parse(localStorage.getItem("sesion") || '{}');
-    
-    if(sesion.activa){
+
+    if (sesion.activa) {
       return true
-    }else{
+    } else {
       this.router.navigate([LoginComponent]);
       return false
     }
   }
-  
+
 }

@@ -1,10 +1,11 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Estudiantes } from 'src/app/core/models/alumno';
-import { Observable } from 'rxjs';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { estudiantesService } from 'src/app/shared/services/estudiantes.service';
+import { EditarAlumnoComponent } from '../editar-alumno/editar-alumno.component';
+
 
 @Component({
   selector: 'app-abm-de-alumnos',
@@ -38,26 +39,19 @@ export class ABMDeAlumnosComponent implements OnInit {
     });
   }
 
+  abrirDialogModificar(estudiante: Estudiantes) {
+    this.dialog.open(EditarAlumnoComponent, {
+      width: '300px',
+      data: estudiante
+    });
+  }
+
   eliminarAlumno(id: number) {
     this.alumnoService.eliminarAlumno(id).subscribe(console.log);
   }
 
-  // agregarAlumno(){
-  //   console.log(this.formulario.value);
-  //   this.alumnoService.agregarAlumno(this.formulario.value).subscribe(data => {
-  //     console.log(data);
-  //   });
-  //   this.router.navigate(['/inscripciones']);
-  // }
-
   agregarAlumno() {
     this.alumnoService.agregarAlumno(this.formulario.value);
   }
-
-  // ngOnDestroy(): void {
-  //   if (this.alumnosSuscripcion) {
-  //     this.alumnosSuscripcion.unsubscribe();
-  //   }
-  // }
 
 }

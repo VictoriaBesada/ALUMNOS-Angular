@@ -39,7 +39,7 @@ export class PersonasServicios {
     let params = new HttpParams();
     params = params.append('method', 'getPersons');
     params = params.append('IdStudent', "");
-    params = params.append('Role', "4");
+    params = params.append('Rol', "4");
     let Respuesta = this.http.get(this.serviceURL, { params: params });
     return Respuesta.pipe(catchError(this.httpMensajeError));
   }
@@ -50,7 +50,7 @@ export class PersonasServicios {
     let params = new HttpParams();
     params = params.append('method', 'getPersons');
     params = params.append('IdStudent', "");
-    params = params.append('Role', "2");
+    params = params.append('Rol', "2");
     let Respuesta = this.http.get(this.serviceURL, { params: params });
     return Respuesta;
   }
@@ -61,7 +61,7 @@ export class PersonasServicios {
     let params = new HttpParams();
     params = params.append('method', 'getPersons');
     params = params.append('IdStudent', "");
-    params = params.append('Role', "3");
+    params = params.append('Rol', "3");
     let Respuesta = this.http.get(this.serviceURL, { params: params });
     return Respuesta.pipe(catchError(this.httpMensajeError));
   }
@@ -72,7 +72,7 @@ export class PersonasServicios {
     let params = new HttpParams();
     params = params.append('method', 'getPersons');
     params = params.append('IdStudent', id.toString());
-    params = params.append('Role', pIdRole.toString());
+    params = params.append('Rol', pIdRole.toString());
     let Respuesta = this.http.get(this.serviceURL, { params: params });
     // console.log(this.serviceURL + "?" + params.toString());
     return Respuesta.pipe(catchError(this.httpMensajeError));

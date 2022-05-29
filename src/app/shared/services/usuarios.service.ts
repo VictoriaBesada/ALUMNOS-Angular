@@ -13,16 +13,25 @@ export class UsuariosService {
   private readonly API_URL = 'https://626765be78638336421ee4dd.mockapi.io';
   constructor(private http: HttpClient) { }
 
-  // obtenerUsuario(id:number) {
-  //   return this.http.get(`https://626765be78638336421ee4dd.mockapi.io/usuarios/${id}`)
-  // }
-
-  obtenerUsuarios() {
+  
+  obtenerUsuarios(id:number) {
     return this.http.get<Usuario[]>(`${this.API_URL}/usuarios`, {
         headers: new HttpHeaders({
           'content-type': 'application/json'
         })
       }).pipe(catchError(this.manejoError));
+}
+
+obtenerUsuario(legajo: number): Observable<any> {
+
+  let params = new HttpParams();
+  params = params.append('method', 'getUsuario');
+  params = params.append('legajo', legajo.toString().trim());
+  let Respuesta = this.http.get(this.API_URL, { params: params });
+
+
+  return Respuesta.pipe(catchError(this.manejoError));
+
 }
 
 private manejoError(error: HttpErrorResponse){

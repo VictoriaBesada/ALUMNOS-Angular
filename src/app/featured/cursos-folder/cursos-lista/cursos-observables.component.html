@@ -1,7 +1,8 @@
 <h1 heading>Cursos</h1>
 <hr hr>
 
-<button mat-button color="primary" routerLink="/nuevo-curso" class="botonNuevoCurso">(+) Agregar nuevo curso</button>
+<button mat-button color="primary" routerLink="/nuevo-curso" class="botonNuevoCurso"
+    *ngIf="sesionActiva.activa && sesionActiva.usuario.rol == 'admin'">(+) Agregar nuevo curso</button>
 
 <div class="contain componenteCursos" *ngFor="let curso of cursos">
     <mat-card class="containerCursos">
@@ -16,14 +17,14 @@
         </mat-card-content>
         <mat-card-content>
             <p>Descripcion: {{curso.descripcion}}</p>
-            <!-- <p>Profesor: {{ curso.profesor.nombre }}</p> -->
             <p>{{ curso.estudiantes.length }} Estudiantes</p>
         </mat-card-content>
 
         <mat-card-actions align="end">
-            <button mat-button color="accent" routerLink="/cursos/{{curso.id}}">Ver detalle</button>
-            <button mat-button color="primary" (click)="abrirDialogModificar(curso)">Modificar</button>
+            <button mat-button color="primary" routerLink="/cursos/{{curso.id}}">Ver detalle</button>
+            <button mat-button color="primary" *ngIf="sesionActiva.activa && sesionActiva.usuario.rol == 'admin'"
+                (click)="abrirDialogModificar(curso)">Modificar</button>
             <button mat-button color="warn" (click)="eliminarCurso(curso.id)">Eliminar</button>
         </mat-card-actions>
-    </mat-card>    
+    </mat-card>
 </div>

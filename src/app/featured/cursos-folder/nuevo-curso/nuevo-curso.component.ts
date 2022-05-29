@@ -10,6 +10,7 @@ import { CursosService } from 'src/app/shared/services/course.service';
   templateUrl: './nuevo-curso.component.html',
   styleUrls: ['./nuevo-curso.component.css']
 })
+
 export class NuevoCursoComponent implements OnInit {
   formulario: FormGroup;
   profesores: Profesor[] = [{
@@ -17,17 +18,17 @@ export class NuevoCursoComponent implements OnInit {
     nombre: "Abner",
     apellido: "Garcia",
     correo: "abner@gmail.com"
-  },{
+  }, {
     id: 2,
     nombre: "Pablo",
     apellido: "Garcia",
     correo: "pablo@gmail.com"
-  },{
+  }, {
     id: 3,
     nombre: "Victoria",
     apellido: "Cordero",
     correo: "victoria@gmail.com"
-  },{
+  }, {
     id: 4,
     nombre: "Fernando",
     apellido: "Olvera",
@@ -50,7 +51,7 @@ export class NuevoCursoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  crearCurso(){
+  crearCurso() {
     console.log(this.formulario.value);
     this.cursoService.crearCurso(this.formulario.value).subscribe(data => {
       console.log(data);
